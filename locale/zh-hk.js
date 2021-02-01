@@ -70,17 +70,17 @@
             nextDay: '[明天]LT',
             nextWeek: function (now) {
                 if (now.week() !== this.week()) {
-                    return '[下]dddLT';
+                    return '[下]ddddLT';
                 } else {
-                    return 'dddLT';
+                    return 'ddddLT';
                 }
             },
             lastDay: '[昨天]LT',
             lastWeek: function (now) {
                 if (this.week() !== now.week()) {
-                    return '[上]dddLT';
+                    return '[上]ddddLT';
                 } else {
-                    return 'dddLT';
+                    return 'ddddLT';
                 }
             },
             sameElse: 'L',
