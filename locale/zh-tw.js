@@ -64,11 +64,23 @@
             }
         },
         calendar: {
-            sameDay: '[今天] LT',
-            nextDay: '[明天] LT',
-            nextWeek: '[下]dddd LT',
-            lastDay: '[昨天] LT',
-            lastWeek: '[上]dddd LT',
+            sameDay: '[今天]LT',
+            nextDay: '[明天]LT',
+            nextWeek: function (now) {
+                if (now.week() !== this.week()) {
+                    return '[下]dddLT';
+                } else {
+                    return 'dddLT';
+                }
+            },
+            lastDay: '[昨天]LT',
+            lastWeek: function (now) {
+                if (this.week() !== now.week()) {
+                    return '[上]dddLT';
+                } else {
+                    return 'dddLT';
+                }
+            },
             sameElse: 'L',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(日|月|週)/,
